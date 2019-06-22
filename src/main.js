@@ -10,6 +10,9 @@ Vue.use(VueParticles)
 Vue.config.productionTip = false
 Vue.use(element)
 /* eslint-disable no-new */
+
+
+
 new Vue({
   el: '#app',
   router,

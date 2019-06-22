@@ -1,105 +1,183 @@
 <template>
-    <div>
-        <div v-for="item in struct">
-            <h6>{{item.question}}</h6>
-            <el-radio-group v-model="item.answervalue" @change="changes">
-                <template v-for="items in item.optionlist" >
-                    <el-radio :label=i v-for="(key,i) in items" >
-                            {{items[i]}}
-                    </el-radio>
-                </template>
-            </el-radio-group>
-        </div>
-    </div>
+  <div class="wrapper">
+    <el-container>
+      <el-header>
+        <el-row :gutter="10" height="60px">
+          <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+            <div class="grid-content bg-purple"></div>
+          </el-col>
+          <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+            <div class="grid-content bg-purple-light"></div>
+          </el-col>
+          <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+            <div class="grid-content bg-purple">时间：{{datanow}}</div>
+          </el-col>
+          <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+            <div class="grid-content bg-purple-light"></div>
+          </el-col>
+        </el-row>
+      </el-header>
+      <el-container>
+        <el-aside width="240px">
+          <el-menu :default-openeds="['1', '3']" router>
+            <el-submenu index="1">
+              <template slot="title">
+                <i class="el-icon-message"></i>导航一
+              </template>
+              <el-menu-item-group>
+                <template slot="title">分组一</template>
+                <el-menu-item index="1-1">选项1</el-menu-item>
+                <el-menu-item index="1-2">选项2</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="分组2">
+                <el-menu-item index="1-3">选项3</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="1-4">
+                <template slot="title">选项4</template>
+                <el-menu-item index="1-4-1">选项4-1</el-menu-item>
+              </el-submenu>
+            </el-submenu>
+            <el-submenu index="2">
+              <template slot="title">
+                <i class="el-icon-menu"></i>导航二
+              </template>
+              <el-menu-item-group>
+                <template slot="title">分组一</template>
+                <el-menu-item index="2-1">选项1</el-menu-item>
+                <el-menu-item index="2-2">选项2</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="分组2">
+                <el-menu-item index="2-3">选项3</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="2-4">
+                <template slot="title">选项4</template>
+                <el-menu-item index="2-4-1">选项4-1</el-menu-item>
+              </el-submenu>
+            </el-submenu>
+            <el-submenu index="3">
+              <template slot="title">
+                <i class="el-icon-setting"></i>导航三
+              </template>
+              <el-menu-item-group>
+                <template slot="title">分组一</template>
+                <el-menu-item index="3-1">选项1</el-menu-item>
+                <el-menu-item index="3-2">选项2</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="分组2">
+                <el-menu-item index="3-3">选项3</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="3-4">
+                <template slot="title">选项4</template>
+                <el-menu-item index="3-4-1">选项4-1</el-menu-item>
+              </el-submenu>
+            </el-submenu>
+          </el-menu>
+        </el-aside>
+        <el-main>Main</el-main>
+      </el-container>
+    </el-container>
+  </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                struct: [{
-                    "optionlist": [{
-                        "00": "宋江"
-                    }, {
-                        "10": "吴用"
-                    }, {
-                        "20": "卢俊义"
-                    }],
-                    quetype: "1",
-                    answervalue: "20",
-                    question: "请问你好我是第一题"
-                },
-                    {
-                        "optionlist": [{
-                            "01": "宋江1"
-                        }, {
-                            "11": "吴用1"
-                        }, {
-                            "21": "卢俊义1"
-                        }],
-                        quetype: "1",
-                        answervalue: "11",
-                        question: "请问你好我是第er题"
-                    },
-                    {
-                        "optionlist": [{
-                            "02": "宋江2"
-                        }, {
-                            "12": "吴用2"
-                        }, {
-                            "22": "卢俊义2"
-                        }],
-                        quetype: "1",
-                        answervalue: "22",
-                        question: "请问你好我是第san题"
-                    },
-                    {
-                        "optionlist": [{
-                            "03": "宋江"
-                        }, {
-                            "13": "吴用"
-                        }, {
-                            "23": "卢俊义"
-                        }],
-                        quetype: "1",
-                        answervalue: "03",
-                        question: "请问你好我是第si题"
-                    },
-
-                ],
-                item:{
-                    answervalue:'',
-                },
-                answervalue:[],
-            };
-        },
-        methods:{
-            changes(e){
-                console.log('1111' + e);
-            },
-        },
-        mounted() {
-
-            console.log(this.struct.answervalue)
-            // this.struct.optionlist.map(function (key,v) {
-            //     console.log(key.v);
-            // })
-            this.struct.forEach(function (key) {
-                // key.optionlist.forEach(function (keys) {
-               for (let i of key.optionlist){
-
-               }
-
-                    // for (let i of keys){
-                    //     console.log(i);
-                    // }
-                })
-            // })
-        }
-    }
+export default {
+  data() {
+    return {
+      datanow: new Date().toLocaleTimeString()
+    };
+  },
+  methods: {},
+  mounted() {
+    let _this = this;
+    setInterval(function name(params) {
+      _this.datanow = new Date().toLocaleTimeString();
+    });
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.wrapper {
+  height: 100%;
+  background: linear-gradient(45deg, rgb(210, 230, 174), pink, skyblue);
+}
+.el-container {
+  height: 100%;
+}
+.el-header,
+.el-footer {
+  background: linear-gradient(45deg, rgb(206, 223, 145), pink, skyblue);
 
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+}
+
+.el-aside {
+  background-color: #333;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+  height: 100%;
+}
+
+.el-main {
+  background: linear-gradient(45deg, yellowgreen, pink, skyblue,0.1);
+
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+  height: 100%;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+
+.el-header {
+  background-color: #b3c0d1;
+  color: #333;
+  line-height: 60px;
+}
+
+.el-aside {
+  background-color: white;
+  color: white;
+
+  overflow-y: auto;
+  overflow-x: auto;
+  z-index: 0;
+}
+.el-aside::-webkit-scrollbar {
+  width: 0;
+}
+.el-row >>> .grid-content {
+  min-height: 60px;
+}
+.el-col {
+  border-radius: 4px;
+}
+/* .bg-purple-dark {
+  background: #99a9bf;
+}
+.bg-purple {
+  background: #d3dce6;
+}
+.bg-purple-light {
+  background: #e5e9f2;
+} */
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
 </style>
