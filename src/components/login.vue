@@ -102,6 +102,7 @@
                 ],
                 islive2d: true,
                 isDialogue: false,
+                path:'',
             };
         },
         methods: {
@@ -115,19 +116,23 @@
                 this.src = require("../assets/login.png");
             },
             async submitForm() {
-                let username = this.ruleForm.username;
-                let password = this.ruleForm.password;
-                let res = await this.axios({
+                // let username = this.ruleForm.username;
+                // let password = this.ruleForm.password;
+                // let path = await  this.$axios.get("/static/requestUrl.json");
+                // this.path = path.data.yxBaseUrl;
+                // console.log(path,this.path);
+                let res = await this.$axios({
                     method: 'post',
-                    url: 'http://yx-admin-front-api.yunrongt.com:8010/web/login',
+                    // url: `${this.path}/web/login`,
 
+                    url:'http://127.0.01:8089/' ,
                     headers: {
                         token: sessionStorage.admin_token
                     },
                     data: {
                         userName: this.ruleForm.username,
                         password: this.ruleForm.password,
-                        source: "admin"
+                        // source: "admin"
                     }
                 });
 
@@ -224,7 +229,7 @@
         position: fixed;
         left: 0;
         bottom: 0;
-        max-width: 32px;
+        max-width: 320px;
     }
 
     .live2d-panel {

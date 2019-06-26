@@ -3,7 +3,7 @@
         <template>
             <div class="live2d-panel">
                 <dialogue v-if="isDialogue" :customDialogue="customDialogue" ref='dialogue'
-                          :position="right"></dialogue>
+                          ></dialogue>
                 <live2d v-if="islive2d" :modelPath="modelPath" ref='l2dMange'
                 ></live2d>
             </div>
@@ -40,7 +40,7 @@
                 customDialogue: custom,
                 toolsData: [
                     {tabMsg: 'readio', backgroundColor: '#ff0', show: true},
-                    {tabMsg: 'dialogue', width: 280, customDialogue: custom, show: true},
+                    {tabMsg: 'dialogue', width: 280, customDialogue: custom, show: true,},
                     {tabMsg: 'change', backgroundColor: '#add8e6', show: true},
                     {tabMsg: 'save', backgroundColor: 'green', show: true},
                     {tabMsg: 'about', backgroundColor: '#eb7a77', show: true},
@@ -152,12 +152,12 @@
     }
 
     .fade-enter-active {
-        transition: opacity 2s;
+        transition: opacity 0.3s;
     }
 
     .fade-leave-active {
         opacity: 0;
-        transition: opacity 2s;
+        transition: opacity 0.3s;
     }
 
 </style>

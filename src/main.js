@@ -14,9 +14,8 @@ Vue.config.productionTip = false
 Vue.use(element)
 Vue.use(live2d)
 Vue.use(live2d4vue)
-Vue.use(axios)
 /* eslint-disable no-new */
-
+Vue.prototype.$axios = axios;
 
 
 new Vue({
