@@ -10,7 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "element-ui": "^2.8.2",
+    "live2d-vue": "^0.2.2",
+    "live2d4vue": "^0.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -38,6 +41,9 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "pug": "^2.0.4",
+    "pug-filters": "^3.1.1",
+    "pug-loader": "^2.4.0",
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
