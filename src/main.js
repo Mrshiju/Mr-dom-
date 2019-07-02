@@ -9,6 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import VueParticles from 'vue-particles'
 import  live2d from  'live2d-vue'
 import  live2d4vue from  'live2d4vue'
+import './components/until'
 Vue.use(VueParticles)
 Vue.config.productionTip = false
 Vue.use(element)
@@ -16,6 +17,14 @@ Vue.use(live2d)
 Vue.use(live2d4vue)
 /* eslint-disable no-new */
 Vue.prototype.$axios = axios;
+
+router.beforeEach((to,from,next) => {
+  if(to.path != '/login' && !localStorage.userName){
+    router.push('/login')
+  }else(
+    next()
+  )
+})
 
 
 new Vue({

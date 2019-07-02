@@ -131,6 +131,7 @@
     }
 
     .tools-panel {
+        z-index: 99;
         position: fixed;
         right: 0;
         bottom: 0;
@@ -138,6 +139,7 @@
     }
 
     .live2d-panel {
+        z-index: 99;
         position: fixed;
         right: 0;
         bottom: 0

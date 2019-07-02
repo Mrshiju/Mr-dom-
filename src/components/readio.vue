@@ -22,7 +22,7 @@
           <el-menu :default-openeds="['1', '3']" router>
             <el-submenu index="1">
               <template slot="title">
-                <i class="el-icon-message"></i>导航一
+                <i class="el-icon-message"></i>个人信息
               </template>
               <el-menu-item-group>
                 <template slot="title">分组一</template>
@@ -73,7 +73,9 @@
             </el-submenu>
           </el-menu>
         </el-aside>
-        <el-main>Main</el-main>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>

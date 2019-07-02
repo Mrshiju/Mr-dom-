@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import HelloWorld from '@/components/slidebar'
 import  Readio from  '@/components/readio'
 import  Login from  '@/components/login'
+import  Elding from  '@/components/elloading'
+import Resume from '@/components/resume'
 Vue.use(Router)
 
 export default new Router({
@@ -20,12 +22,23 @@ export default new Router({
     {
       path: '/readio',
       name: 'readio',
-      component: Readio
+      component: Readio,children:[
+        {
+          path:'/readio',
+          name:'resume',
+          component:Resume
+        },
+      ]
     },
     {
       path:'/login',
       name:'login',
       component:Login
+    },
+    {
+      path:'/loadin',
+      name:'loagin',
+      component:Elding
     }
 
   ]
