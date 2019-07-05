@@ -5,6 +5,7 @@ import  Readio from  '@/components/readio'
 import  Login from  '@/components/login'
 import  Elding from  '@/components/elloading'
 import Resume from '@/components/resume'
+import Elployment from '@/components/elployment'
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +28,11 @@ export default new Router({
           path:'/readio',
           name:'resume',
           component:Resume
+        },
+        {
+          path:'/elployment',
+          name:'elployment',
+          component:Elployment
         },
       ]
     },

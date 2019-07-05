@@ -22,7 +22,6 @@
       <img :src="src" />
     </div>
     <div class="ms-login">
-      <div class="ms-title">后台管理系统</div>
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="ms-content">
         <el-form-item prop="username">
           <el-input

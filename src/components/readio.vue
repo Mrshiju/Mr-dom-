@@ -13,7 +13,9 @@
             <div class="grid-content bg-purple">时间：{{datanow}}</div>
           </el-col>
           <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
-            <div class="grid-content bg-purple-light"></div>
+            <div class="grid-content bg-purple-light">
+              <el-button @click="loginout">退出</el-button>
+            </div>
           </el-col>
         </el-row>
       </el-header>
@@ -26,8 +28,8 @@
               </template>
               <el-menu-item-group>
                 <template slot="title">分组一</template>
-                <el-menu-item index="1-1">选项1</el-menu-item>
-                <el-menu-item index="1-2">选项2</el-menu-item>
+                <el-menu-item index="elployment">招聘信息</el-menu-item>
+                <el-menu-item index="readio">个人技能</el-menu-item>
               </el-menu-item-group>
               <el-menu-item-group title="分组2">
                 <el-menu-item index="1-3">选项3</el-menu-item>
@@ -88,7 +90,12 @@ export default {
       datanow: new Date().toLocaleTimeString()
     };
   },
-  methods: {},
+  methods: {
+    loginout() {
+      localStorage.removeItem("userName");
+      this.$router.push("login");
+    }
+  },
   mounted() {
     let _this = this;
     setInterval(function name(params) {
@@ -124,13 +131,14 @@ export default {
   height: 100%;
 }
 
-.el-main {
-  background: linear-gradient(45deg, yellowgreen, pink, skyblue,0.1);
+.wrapper >>> .el-main {
+  background: linear-gradient(45deg, yellowgreen, pink, skyblue, 0.1);
 
   color: #333;
-  text-align: center;
-  line-height: 160px;
-  height: 100%;
+  /* text-align: center; */
+  /* line-height: 160px;
+  height: 100%; */
+  overflow: auto;
 }
 
 body > .el-container {

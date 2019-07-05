@@ -10,6 +10,8 @@ import VueParticles from 'vue-particles'
 import  live2d from  'live2d-vue'
 import  live2d4vue from  'live2d4vue'
 import './components/until'
+import {postRequest} from './comment/axios'
+Vue.prototype.postRequest = postRequest
 Vue.use(VueParticles)
 Vue.config.productionTip = false
 Vue.use(element)

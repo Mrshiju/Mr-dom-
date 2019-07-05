@@ -61,6 +61,7 @@ export default {
           {
             name: "框架",
             type: "pie",
+            selectedMode:"single",
             radius: ["40%", "55%"],
             label: {
               normal: {
